@@ -17,9 +17,13 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
-        <td><%= link_to 'Show', post, class: 'btn btn-success btn-xs' %></td>
-        <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-primary btn-xs'%></td>
-        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+        <td>
+          <div class="btn-group">
+            <%= link_to 'Show', post, class: 'btn btn-success btn-xs' %>
+            <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-primary btn-xs'%> 
+            <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
