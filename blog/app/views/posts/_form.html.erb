@@ -1,31 +1,9 @@
-<%= form_for(@post, class: 'form-horizontal') do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= bootstrap_form_for(@post, class: 'form-horizontal') do |f| %>
+  <%= f.text_field :title%>
+  <%= f.text_area :content%>
+  <%= f.form_group do %>
+    <%= button_tag( :class => "btn btn-default  btn-xs") do %>
+      <i class="glyphicon glyphicon-ok"></i> Submit
+    <% end %>
   <% end %>
-
-  <div class="field form-group">
-    <%= f.label :title, class: 'col-sm-1 control-label' %>
-    <div class="col-sm-11">
-      <%= f.text_field :title, class: 'form-control' %>
-    </div>
-  </div>
-  <div class="field form-group">
-    <%= f.label :content, class: 'col-sm-1 control-label' %>
-    <div class="col-sm-11">
-      <%= f.text_area :content, class: 'form-control' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="controls">
-      <%= f.submit %>
-    </div>
-  </div>
 <% end %>
