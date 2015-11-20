@@ -14,17 +14,17 @@
       <div class="col-xs-2">
       </div>
       <div class="col-xs-8">
-        <% flash.each do |name, message| -%>
-        <%= content_tag :div, message, class: "alert alert-#{name}" %>
-        <% end -%>
-      </div>
-      <div class="col-xs-2">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-2">
-      </div>
-      <div class="col-xs-8">
+        <% if !notice && !alert %>
+          <% flash.each do |name, message| %>
+          <%= content_tag :div, message, class: "alert alert-#{name}" %>
+          <% end %>
+        <% end %>
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
         <%= yield %>
       </div>
       <div class="col-xs-2">
