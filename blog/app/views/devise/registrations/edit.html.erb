@@ -14,12 +14,14 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
 
     <%= button_tag(class: "btn btn-default btn-xs") do %>
-      Update
+      <i class="glyphicon glyphicon-ok"></i> Update
     <% end %>
 <% end %>
 
 <h4>Cancel my account</h4>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), class: "btn btn-danger btn-xs", data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to "Cancel my account", registration_path(resource_name), class: "btn btn-danger btn-xs", data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to :back, class: "btn btn-default btn-xs" do %>
+  <i class="glyphicon glyphicon-arrow-left"></i> Back
+<% end %>
