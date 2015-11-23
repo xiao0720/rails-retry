@@ -1,0 +1,9 @@
+<%= bootstrap_form_for(@comment, class: 'form-horizontal') do |f| %>
+  <%= f.text_area :content%>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.form_group do %>
+    <%= button_tag(class: "btn btn-default  btn-xs") do %>
+      <i class="glyphicon glyphicon-ok"></i> Submit
+    <% end %>
+  <% end %>
+<% end %>

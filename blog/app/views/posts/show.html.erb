@@ -9,6 +9,7 @@
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
+
 </div>
 
 <div class="col-xs-4">
@@ -23,11 +24,10 @@
   <% end %>
 <% end %>
 
-<%= link_to posts_path, class: 'btn btn-default btn-xs' do %>
+<%= link_to new_comment_path, class: 'btn btn-default btn-xs' do %>
   <i class="glyphicon glyphicon-share-alt"></i> Reply
 <% end %>
 </div>
 </div>
-
 <%= render 'comment' %>
 
