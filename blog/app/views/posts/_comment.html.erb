@@ -1,0 +1,9 @@
+<%@post.comments.each do |comment| %>
+  <p>
+    <strong><%= comment.user.email + ": " %></strong>
+    <%= comment.content %>
+    <%= link_to posts_path, class: 'btn btn-default btn-xs' do %>
+      <i class="glyphicon glyphicon-share-alt"></i>
+    <% end %>
+  </p>
+<% end %>
