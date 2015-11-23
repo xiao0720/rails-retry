@@ -1,36 +1,15 @@
 {
 	"_type": "Project",
 	"_id": "AAAAAAFF+h6SjaM2Hec=",
-	"name": "Untitled",
+	"name": "Rails  Forum",
 	"ownedElements": [
-		{
-			"_type": "UMLModel",
-			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
-			"_parent": {
-				"$ref": "AAAAAAFF+h6SjaM2Hec="
-			},
-			"name": "Model",
-			"ownedElements": [
-				{
-					"_type": "UMLClassDiagram",
-					"_id": "AAAAAAFF+qBtyKM79qY=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Main",
-					"visible": true,
-					"defaultDiagram": true
-				}
-			],
-			"visibility": "public"
-		},
 		{
 			"_type": "ERDDataModel",
 			"_id": "AAAAAAFRM9iqsoS++7g=",
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Data Model1",
+			"name": "Data Model",
 			"ownedElements": [
 				{
 					"_type": "ERDDiagram",
@@ -530,7 +509,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 264,
-									"top": 413,
+									"top": 405,
 									"width": 185,
 									"height": 13,
 									"autoResize": false,
@@ -568,7 +547,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 269,
-											"top": 436,
+											"top": 428,
 											"width": 175,
 											"height": 13,
 											"autoResize": false
@@ -592,7 +571,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 269,
-											"top": 451,
+											"top": 443,
 											"width": 175,
 											"height": 13,
 											"autoResize": false
@@ -616,7 +595,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 269,
-											"top": 466,
+											"top": 458,
 											"width": 175,
 											"height": 13,
 											"autoResize": false
@@ -640,7 +619,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 269,
-											"top": 481,
+											"top": 473,
 											"width": 175,
 											"height": 13,
 											"autoResize": false
@@ -664,7 +643,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 269,
-											"top": 496,
+											"top": 488,
 											"width": 175,
 											"height": 13,
 											"autoResize": false
@@ -688,7 +667,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 269,
-											"top": 511,
+											"top": 503,
 											"width": 175,
 											"height": 13,
 											"autoResize": false
@@ -704,7 +683,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 264,
-									"top": 431,
+									"top": 423,
 									"width": 185,
 									"height": 98,
 									"autoResize": false
@@ -720,7 +699,7 @@
 							"containerChangeable": false,
 							"containerExtending": false,
 							"left": 264,
-							"top": 408,
+							"top": 400,
 							"width": 185,
 							"height": 121,
 							"autoResize": false,
@@ -757,7 +736,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 349,
-									"top": 355,
+									"top": 351,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -817,7 +796,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 350,
-									"top": 376,
+									"top": 368,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -848,7 +827,7 @@
 								"$ref": "AAAAAAFRM9i6NYTFCVs="
 							},
 							"lineStyle": 2,
-							"points": "335:316;335:408",
+							"points": "335:316;335:400",
 							"nameLabel": {
 								"$ref": "AAAAAAFRNDe2aIWSZeg="
 							},
