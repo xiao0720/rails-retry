@@ -4,9 +4,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.save
-    redirect_to Post.find(comment_params[:post_id])
-    # render plain: params[:comment].inspect
+    if @comment.save
+      redirect_to Post.find(comment_params[:post_id])
+      # render plain: params[:comment].inspect
+    else
+      render :new
+    end
   end
 
   private
