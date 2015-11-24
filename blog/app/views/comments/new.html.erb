@@ -3,7 +3,7 @@
 <%= bootstrap_form_for([@post, @post.comments.build]) do |f| %>
   <%= f.text_area :content%>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :post_id, value: params[:format] %>
+  <%= f.hidden_field :post_id, value: params[:post_id] %>
   <%= f.form_group do %>
     <%= button_tag(class: "btn btn-default  btn-xs") do %>
       <i class="glyphicon glyphicon-ok"></i> Submit
@@ -11,6 +11,6 @@
   <% end %>
 <% end %>
 
-<%= link_to :back, class: 'btn btn-default btn-xs' do %>
+<%= link_to post_path(@post), class: 'btn btn-default btn-xs' do %>
   <i class="glyphicon glyphicon-arrow-left"></i> Back 
 <% end %>
