@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions" }
-  resources :posts
-  resources :comments
+  resources :posts do
+    resources :comments
+  end
   match ':controller(/:action(/:id))(.:format)', :via => [:get, :post]
   root 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.

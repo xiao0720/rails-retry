@@ -1,0 +1,8 @@
+<h3>All Comments</h3>
+<%= @comments.each do |comment |%>
+  <p>
+    <strong><%= comment.user.email + ": " %></strong>
+    <%= comment.content %>
+  </p>
+<% end %>
+    
