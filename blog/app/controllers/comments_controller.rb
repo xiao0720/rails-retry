@@ -1,16 +1,16 @@
 class CommentsController < ApplicationController
-  # GET /comments/new
   def new
-    @comment = Comment.new
   end
 
   def create
-    @comment = Comment.new(comment_params) 
+    @comment = Comment.new(comment_params)
+    @comment.save
+    redirect_to Post.find(comment_params[:post_id])
+    # render plain: params[:comment].inspect
   end
-  
-  private 
-  def comment_params
-    params.require(:comment).permit(:title, :content, :user_id)
 
-  end
+  private
+    def comment_params
+      params.require(:comment).permit(:content, :user_id, :post_id)
+    end
 end
