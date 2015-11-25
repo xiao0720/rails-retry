@@ -1,5 +1,5 @@
 <%= simple_form_for([@post, @comment], class: 'form-horizontal') do |f| %>
-  <%= f.input :content, error: 'Content can\'t be blank' %>
+  <%= f.input :content, error: 'can\'t be blank' %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :post_id, value: params[:post_id] %>
   <%= f.button :button, class: 'btn btn-xs' do %>
