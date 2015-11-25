@@ -4,4 +4,5 @@ class Post < ActiveRecord::Base
 
   validates :title, presence: true
   validates :content, presence: true 
+  accepts_nested_attributes_for :comments
 end

@@ -1,16 +1,5 @@
 <h3>New Comment</h3>
 
-<%= bootstrap_form_for :comment, url: comments_path,  class: 'form-horizontal' do |f| %>
-  <%= f.text_area :content%>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :post_id, value: params[:format] %>
-  <%= f.form_group do %>
-    <%= button_tag(class: "btn btn-default  btn-xs") do %>
-      <i class="glyphicon glyphicon-ok"></i> Submit
-    <% end %>
-  <% end %>
-<% end %>
+<%= render 'form' %>
 
-<%= link_to :back, class: 'btn btn-default btn-xs' do %>
-  <i class="glyphicon glyphicon-arrow-left"></i> Back 
-<% end %>
+

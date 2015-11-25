@@ -1,15 +1,26 @@
 class CommentsController < ApplicationController
   def new
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new
   end
 
   def create
+    @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
-    if @comment.save
-      redirect_to Post.find(comment_params[:post_id])
-      # render plain: params[:comment].inspect
-    else
-      render :new
+
+    respond_to do |format|
+      if @comment.save
+        flash[:success] = 'Comment is succesfully posted.'
+        format.html { redirect_to @post }
+        # render plain: params[:comment].inspect
+      else
+        format.html { render :new }
+      end
     end
+  end
+
+  def index
+    @comments = Comment.all
   end
 
   private
