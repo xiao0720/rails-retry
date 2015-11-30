@@ -12,3 +12,6 @@ Feature: User Login
     Then I am logged in
 
   Scenario: Log out
+    Given I am logged in with a user account
+    When I log out
+    Then I am logged out
