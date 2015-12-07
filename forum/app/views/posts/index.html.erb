@@ -17,7 +17,7 @@
       <tr>
         <td><%= truncate(post.title, length: 80) %></td>
         <td><%= post.updated_at %></td>
-        <td><%= post.user.email %></td>
+        <td><%= post.try(:user).try(:email) || 'deleted user' %></td>
         <td>
           <div class="btn-group">
             <%= link_to 'Show', post, class: 'btn btn-success btn-xs' %>
