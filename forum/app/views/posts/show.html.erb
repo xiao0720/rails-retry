@@ -30,4 +30,11 @@
 </div>
 </div>
 <%= render 'comments/index' %>
-
+<div class="well well-sm col-xs-12">
+<h4>Related Tweets</h4>
+<% twitter.search(@post.title.split.join(" OR ") << " -is -a -an -are", result_type: "popular").each do |tweet| %>
+  <p>
+  <strong><%= tweet.user.name + ": " %></strong>
+  <%= tweet.text %>
+<% end %>
+</div>

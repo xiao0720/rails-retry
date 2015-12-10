@@ -1,5 +1,9 @@
 <%@page_title="Blog Index"%>
-<h3>All Posts</h3>
+<h3>All Posts
+<%= link_to posts_path, class: 'btn btn-default btn-xs' do %>
+  <i class="glyphicon glyphicon-refresh"></i>
+<% end %>
+</h3>
 
 <table class="table table-hover">
   <thead>

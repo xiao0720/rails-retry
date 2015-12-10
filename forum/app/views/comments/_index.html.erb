@@ -1,7 +1,8 @@
-<div class="col-xs-12">
+<div class="well well-sm col-xs-12">
+<h4>Comments</h4>
 <%@post.comments.each do |comment| %>
   <p>
-    <strong><%= comment.try(:user).try(:email) || "deleted user" + ": " %></strong>
+    <strong><%= (comment.try(:user).try(:email) || "deleted user") + ": " %></strong>
     <%= comment.content %>
     <%= link_to new_post_comment_path(@post), class: 'btn btn-default btn-xs' do %>
       <i class="glyphicon glyphicon-share-alt"></i> 
