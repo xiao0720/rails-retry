@@ -1,4 +1,4 @@
-script: cd forum
+before_script: cd forum
 
 language: ruby
 rvm:
