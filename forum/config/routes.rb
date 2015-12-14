@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments 
   end
+  get '/posts/:post_id/comments/new(/:parent_id)(.:format)', to: 'comments#new', as: :new_comment  
   match ':controller(/:action(/:id))(.:format)', :via => [:get, :post]
   root 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.

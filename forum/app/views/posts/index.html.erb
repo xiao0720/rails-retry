@@ -20,7 +20,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= truncate(post.title, length: 80) %></td>
-        <td><%= post.updated_at %></td>
+        <td><%= Time.now.to_s.slice(0,10).eql?(post.created_at.to_s.slice(0,10)) ? "Today" : post.updated_at.getlocal.to_s.slice(0,10) %></td>
         <td><%= post.try(:user).try(:email) || 'deleted user' %></td>
         <td>
           <div class="btn-group">

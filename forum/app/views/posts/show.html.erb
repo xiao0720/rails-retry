@@ -29,12 +29,19 @@
 <% end %>
 </div>
 </div>
-<%= render 'comments/index' %>
 <div class="well well-sm col-xs-12">
 <h4>Related Tweets</h4>
-<% twitter.search(@post.title.split.join(" OR ") << " -is -a -an -are", result_type: "popular").each do |tweet| %>
+<% twitter.search(@post.title, lang: "en", result_type: "popular").each do |tweet| %>
   <p>
-  <strong><%= tweet.user.name + ": " %></strong>
-  <%= tweet.text %>
+    <strong><%= "#{tweet.user.name}: " %></strong>
+    <%= tweet.text %>
+    <% if Time.now.to_s.slice(0,10).eql?(tweet.created_at.getlocal.to_s.slice(0,10)) %>
+      <span class="label label-success">Today</span>
+    <% else %>
+      <span class="label label-info"><%= tweet.created_at.getlocal.to_s.slice(0,10) %></span>
+    <% end %>   
+  </p>
 <% end %>
 </div>
+<%= render 'comments/index' if @post.comments.count > 0 %>
+

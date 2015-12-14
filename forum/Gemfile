@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'closure_tree'
 gem 'rails-erd'
 gem 'twitter'
 gem 'simple_form'

@@ -6,13 +6,19 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = Comment.new(comment_params)
+
+    if params[:comment][:parent_id].to_i > 0
+      parent = Comment.find_by_id(params[:comment].delete(:parent_id))
+      @comment = parent.children.build(comment_params)
+    else
+      @comment = Comment.new(comment_params)
+    end
 
     respond_to do |format|
       if @comment.save
         flash[:success] = 'Comment is succesfully posted.'
         format.html { redirect_to @post }
-        # render plain: params[:comment].inspect
+        #render plain: params[:comment].inspect
       else
         format.html { render :new }
       end
