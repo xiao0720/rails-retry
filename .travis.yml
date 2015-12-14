@@ -2,12 +2,16 @@ language: ruby
 rvm:
   - "2.2.3"
 
+env:
+  - DB=sqlite
+
 install:
   - bundle install
 
 script:
+  - cd forum
   - bundle exec rake cucumber
 
 gemfile:
-  - forum/Gemfile
+  - Gemfile
 
