@@ -1,3 +1,5 @@
+script: cd forum
+
 language: ruby
 rvm:
   - "2.2.3"
@@ -9,7 +11,6 @@ install:
   - bundle install
 
 script:
-  - cd forum
   - bundle exec rake cucumber
 
 gemfile:
