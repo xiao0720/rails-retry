@@ -10,7 +10,7 @@ install:
   - bundle install
 
 script:
-  - bundle exec rake cucumber
+  - bundle exec rake cucumber features/step_definitions/user_log_in_steps.rb
 
 gemfile:
   - Gemfile
