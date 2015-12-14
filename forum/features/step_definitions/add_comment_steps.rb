@@ -16,9 +16,11 @@ end
 
 When(/^I add a comment to the comment$/) do
   click_on('Show')
-  within('p') { click_button }
+  within('p#' + @comment.id.to_s) { click_on('Reply') }
+  fill_in 'Content', with: 'Subcomment'
+  click_on('Submit')
 end
 
 Then(/^The comment has a comment$/) do
-    pending # express the regexp above with the code you wish you had
+  expect(page).to have_content('Subcomment')
 end

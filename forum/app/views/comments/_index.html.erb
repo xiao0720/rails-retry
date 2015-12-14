@@ -1,25 +1,31 @@
 <div class="well well-sm col-xs-12">
 <h4>Comments</h4>
 <%@post.comments.each do |comment| %>
+
   <% if comment.parent %>
+
   <% else %>
-  <p>
+    <p id= <%= comment.id %> >
     <strong><%= (comment.try(:user).try(:email) || "deleted user") + ": " %></strong>
     <%= comment.content %>
     <%= link_to new_comment_path(@post.id, comment.id), class: 'btn btn-default btn-xs' do %>
-      <i class="glyphicon glyphicon-share-alt"></i> 
+      <i class="glyphicon glyphicon-share-alt"></i> Reply
     <% end %>
   </p>
-  <% if comment.children.size > 0 %>
-  <div class="col-xs-12">
-    <% comment.children.each do |comment| %>
-      <p>
-      <strong><%= (comment.try(:user).try(:email) || "deleted user") + ": " %></strong>
-      <%= comment.content %>
-      </p>
+
+    <% if comment.children.size > 0 %>
+    <div class="col-xs-12">
+      <% comment.children.each do |comment| %>
+        <p>
+        <strong><%= (comment.try(:user).try(:email) || "deleted user") + ": " %></strong>
+        <%= comment.content %>
+        </p>
+      <% end %>
+
+    </div>
     <% end %>
-  </div>
+
   <% end %>
-  <% end %>
+
 <% end %>
 </div>
