@@ -1,6 +1,5 @@
-before_script: cd forum
-
 language: ruby
+before_install: cd forum
 rvm:
   - "2.2.3"
 
