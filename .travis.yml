@@ -1,3 +1,4 @@
+brefore_install: cd forum
 language: ruby
 rvm:
   - "2.2.3"
